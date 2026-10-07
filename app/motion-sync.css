@@ -1,0 +1,5 @@
+/* A single rhythm for scroll reveal and carousel changes. */
+:root{--motion-ease:cubic-bezier(.22,.61,.36,1);--motion-duration:700ms}
+html.motion-ready [data-motion]{transition-duration:var(--motion-duration);transition-timing-function:var(--motion-ease)}
+.scene-copy{animation-duration:var(--motion-duration);animation-timing-function:var(--motion-ease)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scene-copy{animation:none}}

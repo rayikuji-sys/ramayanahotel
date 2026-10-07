@@ -1,0 +1,118 @@
+[
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\superior-king.webp",
+    "target": "public/assets/superior-king.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\superior-bathroom.webp",
+    "target": "public/assets/superior-bathroom.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\superior-twin.webp",
+    "target": "public/assets/superior-twin.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\superior-bathroom.webp",
+    "target": "public/assets/superior-bathroom.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-king-bedroom.webp",
+    "target": "public/assets/deluxe-king-bedroom.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-king-layout.webp",
+    "target": "public/assets/deluxe-king-layout.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-king-coffee.webp",
+    "target": "public/assets/deluxe-king-coffee.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-king-desk.webp",
+    "target": "public/assets/deluxe-king-desk.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-twin.webp",
+    "target": "public/assets/deluxe-twin.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\deluxe-twin-window.webp",
+    "target": "public/assets/deluxe-twin-window.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\triple-205.webp",
+    "target": "public/assets/triple-205.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\triple-223.webp",
+    "target": "public/assets/triple-223.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\triple-205.webp",
+    "target": "public/assets/triple-205.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\triple-223.webp",
+    "target": "public/assets/triple-223.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\junior-suite-bedroom.webp",
+    "target": "public/assets/junior-suite-bedroom.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\junior-suite-bedside.webp",
+    "target": "public/assets/junior-suite-bedside.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\junior-suite-desk.webp",
+    "target": "public/assets/junior-suite-desk.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\junior-suite-vanity.webp",
+    "target": "public/assets/junior-suite-vanity.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\junior-suite-shower.webp",
+    "target": "public/assets/junior-suite-shower.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\ramayana-suite-bedroom.webp",
+    "target": "public/assets/ramayana-suite-bedroom.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\ramayana-suite-sofa.webp",
+    "target": "public/assets/ramayana-suite-sofa.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\ramayana-suite-dining.webp",
+    "target": "public/assets/ramayana-suite-dining.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\ramayana-suite-desk.webp",
+    "target": "public/assets/ramayana-suite-desk.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\collection\\ramayana-suite-shower.webp",
+    "target": "public/assets/ramayana-suite-shower.webp"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\ramayana-logo.png",
+    "target": "public/assets/logo.png"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\public\\media\\courtyard-film.jpg",
+    "target": "public/assets/courtyard.jpg"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\node_modules\\@fontsource\\playfair-display\\files\\playfair-display-latin-500-normal.woff2",
+    "target": "public/assets/playfair-display-latin-500-normal.woff2"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\node_modules\\@fontsource\\montserrat\\files\\montserrat-latin-400-normal.woff2",
+    "target": "public/assets/montserrat-latin-400-normal.woff2"
+  },
+  {
+    "source": "C:\\projects\\ramayana-web\\node_modules\\@fontsource\\montserrat\\files\\montserrat-latin-600-normal.woff2",
+    "target": "public/assets/montserrat-latin-600-normal.woff2"
+  }
+]

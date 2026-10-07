@@ -1,0 +1,2 @@
+import {parentPort,workerData} from 'node:worker_threads';import {openStore} from '../domain/store.mjs';import {hold,uid} from '../domain/booking.mjs';
+const gate=new Int32Array(workerData.shared);if(Atomics.load(gate,0)===0)Atomics.wait(gate,0,0);let db;try{db=openStore(workerData.file);hold(db,workerData.quoteId,uid());parentPort.postMessage('ok');}catch(e){parentPort.postMessage(e.code||e.message);}finally{db?.close();}

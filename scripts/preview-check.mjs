@@ -1,0 +1,14 @@
+import {chromium} from 'playwright';import {mkdirSync} from 'node:fs';
+mkdirSync('outputs',{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',error=>errors.push(error.message));
+const baseUrl=process.env.PREVIEW_URL ?? 'http://localhost:3001';
+await page.goto(baseUrl,{waitUntil:'networkidle',timeout:180000});
+await page.screenshot({path:'outputs/home-desktop.png',fullPage:true});
+for(const image of await page.locator('img').all()) await image.scrollIntoViewIfNeeded();
+await page.waitForTimeout(500);
+const imageReport=await page.locator('img').evaluateAll(async images=>Promise.all(images.map(async image=>{const src=image.currentSrc||image.src;try{const response=await fetch(src,{cache:'no-store'});return {src,status:response.status};}catch(error){return {src,status:0,error:String(error)};}})).then(results=>results.filter(result=>result.status<200||result.status>=400)));
+console.log(JSON.stringify({title:await page.title(),errors,body:(await page.locator('body').innerText()).slice(0,600),overflow:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),imageErrors:imageReport.length,imageReport}));
+await page.setViewportSize({width:390,height:844});await page.screenshot({path:'outputs/home-mobile.png',fullPage:true});
+console.log('mobile overflow',await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth));
+await browser.close();

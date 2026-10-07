@@ -1,0 +1,198 @@
+{
+  "source": "Ramayana_Hotel_Makassar (1).txt supplied by hotel; room inventory, dimensions, published promotional rates and guest policies. Brochure: in-room amenities. Imported 2026-09-18. Rates subject to hotel confirmation.",
+  "imported": "2026-10-01T02:13:03.339Z",
+  "rooms": [
+    {
+      "id": "superior-king",
+      "name": "Superior King",
+      "area": 20,
+      "capacity": 2,
+      "base_rate": 299000,
+      "bed": "King bed",
+      "description": "Warm wood, soft lighting, and a comfortable king bed. A welcoming 20 m² retreat after a day in Makassar.",
+      "photos": [
+        {
+          "src": "/assets/superior-king.webp",
+          "caption": "A king bed with white linen, a warm timber headboard, wall lamps, and a writing desk."
+        },
+        {
+          "src": "/assets/superior-bathroom.webp",
+          "caption": "A tiled shower area, towel rail, and toilet in the supplied Superior Room collection."
+        }
+      ],
+      "physicalInventory": 4
+    },
+    {
+      "id": "superior-twin",
+      "name": "Superior Twin",
+      "area": 20,
+      "capacity": 2,
+      "base_rate": 299000,
+      "bed": "Twin beds",
+      "description": "Two separate beds and everyday comforts in a thoughtfully arranged 20 m² space. Settle in, recharge, and start the next day together.",
+      "photos": [
+        {
+          "src": "/assets/superior-twin.webp",
+          "caption": "Two separate beds beneath warm wall lights, with a writing desk and television opposite."
+        },
+        {
+          "src": "/assets/superior-bathroom.webp",
+          "caption": "A tiled shower area, towel rail, and toilet in the supplied Superior Room collection."
+        }
+      ],
+      "physicalInventory": 29
+    },
+    {
+      "id": "deluxe-king",
+      "name": "Deluxe King",
+      "area": 22,
+      "capacity": 2,
+      "base_rate": 349000,
+      "bed": "King bed",
+      "description": "A little more space to make your own. Enjoy 22 m² of familiar comforts, a king bed, and a warm setting for an unhurried stay.",
+      "photos": [
+        {
+          "src": "/assets/deluxe-king-bedroom.webp",
+          "caption": "A king bed, patterned wallpaper, warm wall lamps, and a desk beside the television."
+        },
+        {
+          "src": "/assets/deluxe-king-layout.webp",
+          "caption": "The view from beside the bed toward the television, storage, and vanity."
+        },
+        {
+          "src": "/assets/deluxe-king-coffee.webp",
+          "caption": "A kettle and cups tucked into the open shelving beside the wardrobe."
+        },
+        {
+          "src": "/assets/deluxe-king-desk.webp",
+          "caption": "A curved writing desk with a woven chair and a small floral arrangement."
+        }
+      ],
+      "physicalInventory": 10
+    },
+    {
+      "id": "deluxe-twin",
+      "name": "Deluxe Twin",
+      "area": 22,
+      "capacity": 2,
+      "base_rate": 349000,
+      "bed": "Twin beds",
+      "description": "A 22 m² room with separate beds for shared journeys. An easy place to unwind between business plans and time out in the city.",
+      "photos": [
+        {
+          "src": "/assets/deluxe-twin.webp",
+          "caption": "Twin beds against a textured feature wall, a bedside table between them, and space for a desk opposite."
+        },
+        {
+          "src": "/assets/deluxe-twin-window.webp",
+          "caption": "Two separate beds beside full-height curtains, with warm light on the textured feature wall."
+        }
+      ],
+      "physicalInventory": 26
+    },
+    {
+      "id": "superior-triple",
+      "name": "Superior Triple",
+      "area": 32,
+      "capacity": 3,
+      "base_rate": 499000,
+      "bed": "Triple room · confirm bed arrangement",
+      "description": "Make room for a shared stay. This 32 m² triple category brings extra space for your travelling companions.",
+      "photos": [
+        {
+          "src": "/assets/triple-205.webp",
+          "caption": "Three separate beds in room 205. Confirm the room category and availability with Reservations."
+        },
+        {
+          "src": "/assets/triple-223.webp",
+          "caption": "Three separate beds beside a shared headboard, with a writing desk opposite. Room 223; confirm the category and availability with Reservations."
+        }
+      ],
+      "physicalInventory": 2
+    },
+    {
+      "id": "deluxe-triple",
+      "name": "Deluxe Triple",
+      "area": 32,
+      "capacity": 3,
+      "base_rate": 549000,
+      "bed": "Triple room · confirm bed arrangement",
+      "description": "A generous 32 m² setting for time together. Share your preferred bed arrangement with our team when planning your stay.",
+      "photos": [
+        {
+          "src": "/assets/triple-205.webp",
+          "caption": "Three separate beds in room 205. Confirm the room category and availability with Reservations."
+        },
+        {
+          "src": "/assets/triple-223.webp",
+          "caption": "Three separate beds beside a shared headboard, with a writing desk opposite. Room 223; confirm the category and availability with Reservations."
+        }
+      ],
+      "physicalInventory": 4
+    },
+    {
+      "id": "junior-suite",
+      "name": "Junior Suite",
+      "area": 36,
+      "capacity": 2,
+      "base_rate": 700000,
+      "bed": "Confirm bed arrangement with Reservations",
+      "description": "Take a little more time for yourself. Our 36 m² Junior Suite offers room to settle in and make your visit feel personal.",
+      "photos": [
+        {
+          "src": "/assets/junior-suite-bedroom.webp",
+          "caption": "White linen, patterned armchairs, and a circular wall ornament frame this Junior Suite."
+        },
+        {
+          "src": "/assets/junior-suite-bedside.webp",
+          "caption": "The king bed and pair of patterned armchairs, viewed toward the wardrobe."
+        },
+        {
+          "src": "/assets/junior-suite-desk.webp",
+          "caption": "A compact writing desk with a woven chair, magazines, and an open luggage shelf."
+        },
+        {
+          "src": "/assets/junior-suite-vanity.webp",
+          "caption": "A stone-topped vanity, wall mirror, and neatly arranged bathroom details."
+        },
+        {
+          "src": "/assets/junior-suite-shower.webp",
+          "caption": "A glass shower partition, tiled walls, and fresh towels in the Junior Suite bathroom."
+        }
+      ],
+      "physicalInventory": 1
+    },
+    {
+      "id": "ramayana-suite",
+      "name": "Ramayana Suite",
+      "area": 40,
+      "capacity": 2,
+      "base_rate": 900000,
+      "bed": "Confirm bed arrangement with Reservations",
+      "description": "Our most spacious room category, with 40 m² for a slower, more comfortable stay. A special space for your Makassar chapter.",
+      "photos": [
+        {
+          "src": "/assets/ramayana-suite-bedroom.webp",
+          "caption": "The suite brings a king bed and a cushioned sofa together beneath warm lighting."
+        },
+        {
+          "src": "/assets/ramayana-suite-sofa.webp",
+          "caption": "A dark sofa with patterned cushions faces the television beside the suite dining area."
+        },
+        {
+          "src": "/assets/ramayana-suite-dining.webp",
+          "caption": "A view from the dining table toward the bedroom, desk, and decorative wall mirrors."
+        },
+        {
+          "src": "/assets/ramayana-suite-desk.webp",
+          "caption": "A desk lamp, curved writing surface, and a collection of small decorative mirrors."
+        },
+        {
+          "src": "/assets/ramayana-suite-shower.webp",
+          "caption": "A glass-enclosed shower beside the bathroom vanity and window."
+        }
+      ],
+      "physicalInventory": 1
+    }
+  ]
+}

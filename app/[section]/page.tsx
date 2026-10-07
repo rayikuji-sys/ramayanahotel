@@ -1,0 +1,31 @@
+import {LocalizedText as T} from '@/components/hotel/language-provider';
+import type {Metadata} from 'next';
+import {notFound} from 'next/navigation';
+import Link from 'next/link';
+import {ArrowUpRight,MapPin,Phone,Mail} from 'lucide-react';
+import {content,settings} from '@/lib/db';
+import {Facilities,Dining,Journey,Explore,Photo} from '@/components/hotel/chapters';
+import {Events} from '@/components/hotel/events';
+import {FAQ} from '@/components/hotel/gallery';
+import {VisualGallery} from '@/components/hotel/visual-gallery';
+import {RoomCollection} from '@/components/hotel/room-collection';
+import {galleryMedia} from '@/lib/gallery-media';
+import {InquiryForm} from '@/components/hotel/inquiry-form';
+import {ReserveButton} from '@/components/hotel/site-shell';
+import {directions} from '@/lib/booking';
+import {DetailIcon} from '@/components/hotel/detail-icon';
+const titles:Record<string,[string,string]>={rooms:['A room for your rhythm.','Find the space that feels right for your stay.'],facilities:['Make yourself at home.','Discover the spaces between the moments.'],dining:['A place at the table.','Come together at Arjuna Resto and Rama Shinta Lounge.'],events:['Good things happen together.','Meetings, celebrations, and everything in between.'],explore:['Meet Makassar.','Your stay is only the beginning.'],gallery:['A closer look.','The real spaces, details, and atmosphere of Ramayana.'],'hotel-info':['Your stay, made simple.','A little information goes a long way.'],faq:['A few helpful answers.','And a friendly team for everything else.'],contact:['Let’s talk.','Your next stay or celebration starts with a conversation.'],privacy:['Your information.','How your inquiry is handled.']};
+export const dynamic='force-dynamic';
+export async function generateMetadata({params}:{params:Promise<{section:string}>}):Promise<Metadata>{const {section}=await params;return {title:titles[section]?.[0]||'Page not found',description:titles[section]?.[1]};}
+export default async function SectionPage({params,searchParams}:{params:Promise<{section:string}>;searchParams:Promise<{occasion?:string}>}){const {section}=await params;if(!titles[section])notFound();const [title,description]=titles[section];const items=content(),s=settings();const query=await searchParams;return <main id="main" className="detail-page">{section!=='events'&&<div className="page-intro container"><Link className="eyebrow" href="/"><T>RAMAYANA / </T>{section.replace('-',' ')}</Link><h1 tabIndex={-1}><T>{title}</T></h1><p><T>{description}</T></p></div>}
+ {section==='rooms'&&<div className="container"><RoomCollection rooms={items.filter(i=>i.kind==='room')}/></div>}
+ {section==='facilities'&&<><Facilities full items={items.filter(i=>i.kind==='facility')}/><div className="container detail-rows">{items.filter(i=>i.kind==='facility'&&!i.image).map(i=><article id={i.slug} key={i.id}><p className="eyebrow"><T>{i.category}</T></p><h2><T>{i.title}</T></h2><p><T>{i.description}</T></p></article>)}</div></>}
+ {section==='dining'&&<Dining items={items.filter(i=>i.kind==='dining')}/>}
+ {section==='events'&&<Events items={items.filter(i=>i.kind==='event')} settings={s} full initialOccasion={query.occasion}/>}
+ {section==='explore'&&<Explore items={items.filter(i=>i.kind==='place')} settings={s}/>}
+ {section==='gallery'&&<div className="container"><VisualGallery media={galleryMedia(items,s.heroVideo)}/></div>}
+ {section==='hotel-info'&&<><div className="container info-layout"><div><p className="eyebrow"><T>AT A GLANCE</T></p><h2><T>Here for your stay.</T></h2>{items.filter(i=>i.kind==='policy').map(i=><div className="info-item" key={i.id}><DetailIcon name={i.slug}/><h3><T>{i.title}</T></h3><p><T>{i.description}</T></p></div>)}<Link href="/faq" className="text-link"><T>All guest questions </T><ArrowUpRight size={18}/></Link></div><div className="info-photo"><Photo src="/media/10003537-1edd144d8080acb6116ac9ed99f6fe32.jpeg" alt="Ramayana guest lounge"/></div></div><Journey items={items.filter(i=>i.kind==='service')}/></>}
+ {section==='faq'&&<div className="container section-bottom"><FAQ items={items.filter(i=>i.kind==='faq')}/></div>}
+ {section==='contact'&&<div className="container contact-grid section-bottom"><div><h2><T>Always a warm welcome.</T></h2><p><T>Speak with our team about your stay, meeting, or celebration.</T></p><a className="contact-line" href={`tel:${s.phone.replace(/\s/g,'')}`}><Phone/><T>{s.phone}</T></a><a className="contact-line" href={`mailto:${s.email}`}><Mail/><T>{s.email}</T></a><a className="contact-line" href={directions(s.address)} target="_blank" rel="noreferrer"><MapPin/><T>{s.address}</T></a><ReserveButton/></div><div className="contact-form-panel"><h3><T>Send us a note.</T></h3><InquiryForm kind="contact" settings={s}/></div></div>}
+ {section==='privacy'&&<div className="container prose section-bottom"><h2><T>Inquiry privacy</T></h2><p><T>When you submit a request, we store your name, email, phone number, message, request details, consent time, and the page from which you sent it. These details are used by hotel staff to respond and manage your request.</T></p><p><T>Your request is stored in the hotel website’s database. Event requests may also include organisation details, event requirements, budgets, accommodation needs, and an optional TOR attachment. Uploaded documents are stored privately and can only be downloaded by authenticated hotel staff. Deleting the request also deletes its attachment. Only authenticated staff can access the inquiry dashboard. Submitting a request does not create a confirmed reservation or a payment.</T></p><h3><T>Third-party services</T></h3><p><T>Google Maps loads only when you choose to load it. WhatsApp, Instagram, email, and telephone links open the corresponding external service. Those services handle information under their own policies.</T></p><h3><T>Cookies and analytics</T></h3><p><T>The public website does not set advertising or analytics cookies. The staff dashboard uses an essential session cookie for authentication. No external analytics provider is enabled.</T></p><h3><T>Your questions and requests</T></h3><p><T>Contact </T><a href={`mailto:${s.email}`}><T>{s.email}</T></a><T> to ask about your information or request correction or deletion. Staff can delete inquiry records from the dashboard.</T></p></div>}
+ </main>;}

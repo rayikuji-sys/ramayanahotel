@@ -1,0 +1,23 @@
+services:
+  hotel:
+    build: .
+    init: true
+    restart: unless-stopped
+    env_file: .env.production
+    environment:
+      HOTEL_PORT: "3001"
+      BOOKING_PORT: "3003"
+      HOTEL_DB_PATH: /app/data/hotel.db
+      BOOKING_DB: /app/booking-engine/data/booking-sandbox.sqlite
+      BOOKING_MODE: sandbox
+    ports:
+      - "127.0.0.1:3001:3001"
+    volumes:
+      - hotel-data:/app/data
+      - booking-data:/app/booking-engine/data
+      - private-state:/app/.local
+    stop_grace_period: 30s
+volumes:
+  hotel-data:
+  booking-data:
+  private-state:

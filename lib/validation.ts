@@ -1,0 +1,17 @@
+import {z} from 'zod';
+import {kinds} from './types.ts';
+import {leadStatuses} from './events-model.ts';
+const text=z.string().trim();
+const date=text.regex(/^\d{4}-\d{2}-\d{2}$/).refine(x=>!Number.isNaN(Date.parse(x))&&new Date(x).toISOString().slice(0,10)===x,'Use a valid date');
+export const inquiryUpdateSchema=z.object({id:text.min(1).max(100),status:z.enum(leadStatuses),staffNote:z.string().max(3000),salesOwner:text.max(100).optional(),followUpDate:date.or(z.literal('')).optional()}).strict();
+export const inquirySchema=z.object({kind:z.enum(['reservation','event','contact']),name:text.min(2).max(100),email:text.email().max(254),phone:text.min(7).max(30).regex(/^[+\d\s().-]+$/),message:text.max(3000).default(''),consent:z.literal(true),website:text.max(0).default(''),source:text.startsWith('/').max(200),context:z.object({room:text.max(120).optional(),checkIn:date.optional(),checkOut:date.optional(),guests:z.number().int().min(1).max(2000).optional(),occasion:text.max(80).optional(),date:date.optional(),meals:text.max(100).optional(),accommodation:text.max(100).optional(),setup:text.max(300).optional(),venue:text.max(120).optional(),layout:z.enum(['Theatre','Classroom','Round tables','U-shape']).optional(),duration:text.max(80).optional(),startTime:text.regex(/^([01]\d|2[0-3]):[0-5]\d$/).optional()}).strict().default({})}).strict().superRefine((x,ctx)=>{
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Makassar',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ if(x.kind==='reservation'&&(!x.context.checkIn||!x.context.checkOut))ctx.addIssue({code:'custom',path:['context'],message:'Choose arrival and departure dates'});
+ if(x.context.checkIn&&x.context.checkIn<today)ctx.addIssue({code:'custom',path:['context','checkIn'],message:'Arrival cannot be in the past'});
+ if(x.context.checkIn&&x.context.checkOut&&x.context.checkOut<=x.context.checkIn)ctx.addIssue({code:'custom',path:['context','checkOut'],message:'Departure must follow arrival'});
+ if(x.context.date&&x.context.date<today)ctx.addIssue({code:'custom',path:['context','date'],message:'Event date cannot be in the past'});
+ if(x.kind==='event'&&(!x.context.occasion||!x.context.guests))ctx.addIssue({code:'custom',path:['context'],message:'Choose an occasion and guest count'});
+});
+const media=text.max(250).refine(x=>!x||/^\/media\/[\w./-]+$/.test(x)&&!x.includes('..'),'Use a local /media/ image path');
+export const contentSchema=z.object({id:text.min(1).max(100),kind:z.enum(kinds),slug:text.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).max(100),title:text.min(1).max(150),description:text.max(3000),image:media,category:text.max(100),details:z.record(text.max(50),text.max(1000)).refine(x=>Object.keys(x).length<=20),published:z.boolean(),verified:z.boolean(),active:z.boolean(),sortOrder:z.number().int().min(0).max(9999),sourceNote:text.max(2000)}).strict().refine(x=>!x.published||x.verified&&x.sourceNote.length>5,'Published content requires verification and a source note');
+export const settingsSchema=z.object({name:text.min(2).max(100),tagline:text.min(2).max(150),address:text.min(10).max(300),phone:text.min(7).max(30).regex(/^[+\d\s().-]+$/),whatsapp:text.regex(/^\d{8,16}$/),email:text.email().max(254),instagram:text.url().refine(x=>new URL(x).hostname==='www.instagram.com'&&new URL(x).protocol==='https:'),heroImage:media,heroVideo:media,intro:text.max(500)}).strict();

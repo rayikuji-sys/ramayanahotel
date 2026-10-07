@@ -1,0 +1,63 @@
+.rooms{position:relative;padding:112px 0 100px;background:#faf8f4;color:#292621;overflow:clip;scroll-margin-top:110px}
+.inner{width:min(1400px,calc(100% - 104px));margin:auto}
+.heading{display:flex;align-items:end;justify-content:space-between;gap:64px;margin-bottom:54px}
+.eyebrow{font:11px var(--mono);letter-spacing:.17em;color:#76603e;margin-bottom:22px}
+.heading h2{font-size:clamp(42px,5.2vw,76px);line-height:1.07;letter-spacing:-.055em;color:#292621}
+.heading h2 em{color:#8a7050}
+.headingSide{max-width:320px;padding-bottom:5px}
+.headingSide p{font-size:14px;line-height:1.85;color:#625c53}
+.allRooms{display:inline-flex;align-items:center;gap:36px;border-bottom:1px solid #b3a591;margin-top:18px;padding:8px 0;font-size:12px;color:#34302a}
+.allRooms svg,.detailLink svg{transition:transform .35s}
+.allRooms:hover svg,.detailLink:hover svg{transform:translate(3px,-3px)}
+.collection{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(32px,4vw,66px);align-items:stretch}
+.visual{min-width:0;position:relative;perspective:1600px}
+.photograph{position:relative;display:block;width:100%;height:clamp(450px,43vw,640px);overflow:hidden;background:#ede7de;border-radius:5px 5px 56px 5px;touch-action:pan-y pinch-zoom;isolation:isolate;box-shadow:0 25px 48px -35px #5c493a77;transition:box-shadow .6s,transform .6s}
+.frame{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.frame img{object-fit:cover;transform:scale(1.075);transition:transform 1.4s cubic-bezier(.2,.65,.25,1)}
+.current{opacity:1;z-index:1;animation:unveil .85s cubic-bezier(.22,.65,.22,1) both}
+.current img{transform:scale(1)}
+.photoBadge{position:absolute;inset:auto auto 24px 24px;z-index:2;display:flex;align-items:center;gap:9px;background:#fffc;color:#302c25;border:1px solid #fff9;backdrop-filter:blur(18px);padding:10px 16px;border-radius:28px;font-size:12px;box-shadow:0 5px 25px #35271217}
+.openIcon{position:absolute;inset:24px 24px auto auto;z-index:2;display:grid;place-items:center;width:54px;height:54px;background:#fffd;border:1px solid #fff;color:#3f3526;border-radius:50%;transition:transform .4s}
+.pictureFooter{display:flex;justify-content:space-between;gap:15px;font:9px var(--mono);color:#756d62;letter-spacing:.07em;padding-top:20px}
+.sourceNote{margin-top:12px;color:#655d53;font-size:11px;line-height:1.7}
+.photoPending{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;height:100%;padding:30px;text-align:center;color:#756044;font-size:13px}
+.copyPanel{display:flex;flex-direction:column;min-width:0;padding-top:6px}
+.categoryNav{display:flex;flex-wrap:wrap;gap:6px 20px;border-bottom:1px solid #ded7cc;padding-bottom:14px}
+.categoryNav button{background:none;border:0;padding:8px 0;min-height:44px;font-size:12px;color:#756c60;position:relative}
+.categoryNav button::after{content:'';position:absolute;bottom:-15px;inset-inline:0;height:2px;background:#917044;transform:scaleX(0);transition:transform .4s}
+.categoryNav button[aria-pressed=true]{color:#3b2d1b;font-weight:600}
+.categoryNav button[aria-pressed=true]::after{transform:scaleX(1)}
+.copy{padding:25px 0 24px;flex:1;animation:copyIn .55s both}
+.roomNumber{display:block;color:#917d61;font:11px var(--mono);letter-spacing:.08em;margin-bottom:16px}
+.copy h3{font-size:clamp(34px,3.25vw,52px);line-height:1.1;letter-spacing:-.045em;color:#302a23}
+.description{color:#655d53;font-size:13px;line-height:1.9;margin-top:21px;max-width:410px}
+.facts{display:grid;grid-template-columns:1fr;gap:15px;margin:25px 0}
+.facts>div{display:grid;grid-template-columns:1fr 1.05fr;align-items:start;gap:13px;font-size:11px}
+.facts dt{display:flex;align-items:center;gap:9px;color:#776851;line-height:1.5}
+.facts dd{margin:0;color:#342d24;line-height:1.65;font-size:12px}
+.facts dt :global(.detail-icon){width:auto;height:auto;min-width:19px;background:none;border:0;box-shadow:none;border-radius:0}
+.detailLink{display:inline-flex;align-items:center;justify-content:space-between;gap:38px;min-height:48px;background:#383027;color:#fff;padding:13px 21px;border:1px solid #383027;border-radius:30px;font-size:12px;transition:background .3s}
+.detailLink:hover{background:#5c4932}
+.navigation{display:flex;align-items:center;gap:20px;padding:18px 0 5px;border-top:1px solid #ded7cc}
+.count{font:12px var(--mono);white-space:nowrap;color:#392e23}.count span{color:#8b8073}
+.progress{display:flex;gap:5px;flex:1}.progress i{height:2px;flex:1;background:#ddd5c8;transition:background .4s}.progress .selected{background:#8a6940}
+.arrows{display:flex;gap:8px}.arrows button{width:46px;height:46px;border-radius:50%;background:transparent;border:1px solid #cfc4b4;display:grid;place-items:center;color:#564737;transition:background .3s,transform .3s}.arrows button:hover{background:#ede5d8;transform:translateY(-2px)}
+@keyframes unveil{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@keyframes copyIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){.photograph:hover{transform:rotateY(-1.25deg) rotateX(.5deg);box-shadow:0 28px 50px -30px #5c493a66}.photograph:hover .current img{transform:scale(1.035)}.photograph:hover .openIcon{transform:rotate(45deg)}}
+@media(min-width:1500px){.collection{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}.copy{padding-top:40px}.description{font-size:15px}.facts{margin:32px 0}.facts dt,.facts dd{font-size:13px}}
+@media(max-width:1000px){.inner{width:calc(100% - 64px)}.heading{gap:35px}.headingSide{max-width:260px}.collection{gap:28px;grid-template-columns:1.15fr 1fr}.photograph{height:530px}.categoryNav{gap:5px 14px}.categoryNav button{font-size:11px}.progress{display:none}.navigation{justify-content:space-between}.facts>div{grid-template-columns:1fr 1.1fr}}
+@media(max-width:760px){.rooms{padding:72px 0 64px}.inner{width:calc(100% - 36px)}.heading{display:block;margin-bottom:30px}.heading h2{font-size:48px;max-width:520px}.eyebrow{font-size:10px;margin-bottom:16px}.headingSide{display:flex;align-items:start;justify-content:space-between;gap:25px;max-width:none;margin-top:23px}.headingSide p{max-width:290px;font-size:12px;line-height:1.7}.allRooms{font-size:11px;gap:12px;margin-top:0;flex-shrink:0;max-width:130px}.collection{display:flex;flex-direction:column;gap:22px}.photograph{height:auto;aspect-ratio:1.23;border-radius:4px 4px 35px 4px}.photoBadge{inset:auto auto 16px 16px;padding:8px 12px;font-size:11px}.openIcon{inset:16px 16px auto auto;width:44px;height:44px}.pictureFooter{padding-top:12px;font-size:8px}.copyPanel{padding:0 6px}.categoryNav{justify-content:space-between;gap:6px 12px}.categoryNav button{font-size:12px}.copy{position:relative;padding:26px 0}.roomNumber{position:absolute;inset:31px 0 auto auto;font-size:11px}.copy h3{font-size:35px;padding-inline-end:35px}.description{font-size:12px;margin-top:16px;max-width:none}.facts{grid-template-columns:1fr 1.3fr;gap:24px;margin:24px 0}.facts>div{display:block}.facts dt{font-size:10px}.facts dd{font-size:12px;margin-top:6px}.detailLink{width:100%;font-size:12px}.navigation{padding-top:16px}.progress{display:flex}.arrows button{width:44px;height:44px}}
+@media(max-width:380px){.headingSide{display:block}.allRooms{max-width:none;margin-top:10px}.heading h2{font-size:43px}.copy h3{font-size:31px}.categoryNav button{font-size:11px}.navigation{gap:12px}.facts{gap:14px}}
+@media(prefers-reduced-motion:reduce){.current,.copy{animation:none}.frame,.frame img,.photograph,.openIcon,.arrows button,.progress i{transition:none}.photograph:hover,.photograph:hover .current img{transform:none}}
+/* Reserve scroll distance only when the complete card fits the viewport. */
+@media(min-width:1100px) and (min-height:780px) and (prefers-reduced-motion:no-preference){
+ .rooms[data-scroll-carousel=true]{min-height:calc(100svh + 1800px);overflow:visible;padding-bottom:80px}
+ .rooms[data-scroll-carousel=true] .inner{min-height:inherit}
+ .rooms[data-scroll-carousel=true] .collection{position:sticky;top:110px;align-items:center}
+ .rooms[data-scroll-carousel=true] .photograph{height:min(580px,calc(100svh - 180px))}
+ .rooms[data-scroll-carousel=true] .copyPanel{max-width:100%}
+}
+.frame,.frame img{transition-duration:var(--motion-duration,700ms);transition-timing-function:var(--motion-ease,ease)}
+.current{animation:none}.copy{animation-duration:var(--motion-duration,700ms);animation-timing-function:var(--motion-ease,ease)}
+@media(max-width:760px){.current img{object-fit:cover}.photograph{touch-action:pan-y pinch-zoom}}

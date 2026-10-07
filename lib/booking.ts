@@ -1,0 +1,4 @@
+import type {HotelSettings} from './types';
+export interface BookingProvider{mode:'contact';channels:(settings:HotelSettings,context:string)=>{whatsapp:string;email:string;phone:string};}
+export const ContactReservationProvider:BookingProvider={mode:'contact',channels:(s,context)=>({whatsapp:`https://wa.me/${s.whatsapp}?text=${encodeURIComponent(context)}`,email:`mailto:${s.email}?subject=${encodeURIComponent('Ramayana Hotel inquiry')}&body=${encodeURIComponent(context)}`,phone:`tel:${s.phone.replace(/[^+\d]/g,'')}`})};
+export function directions(address:string,destination?:string){return destination?`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(address)}&destination=${encodeURIComponent(destination)}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;}

@@ -1,0 +1,26 @@
+{
+  "name": "ramayana-booking-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "start": "node server.mjs",
+    "worker": "node worker.mjs",
+    "seed": "node scripts/seed.mjs",
+    "admin:create": "node scripts/admin.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/check.mjs",
+    "baseline": "node scripts/baseline.mjs",
+    "baseline:verify": "node scripts/baseline.mjs --verify",
+    "backup": "node scripts/backup.mjs",
+    "restore:copy": "node scripts/restore-copy.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.13",
+    "pdfkit": "^0.20.2"
+  }
+}

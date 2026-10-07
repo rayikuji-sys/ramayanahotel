@@ -1,0 +1,41 @@
+.spaces{position:relative;background:#fffdf9;color:#302a24;padding:100px 0 112px;border-top:1px solid #e9e2d8;scroll-margin-top:110px;overflow:clip}
+.inner{width:min(1400px,calc(100% - 104px));margin:auto}
+.heading{display:flex;align-items:end;justify-content:space-between;gap:60px;margin-bottom:62px}
+.eyebrow{font:11px var(--mono);color:#76603e;letter-spacing:.17em;margin-bottom:22px}
+.heading h2{font-size:clamp(42px,5.2vw,76px);line-height:1.07;letter-spacing:-.055em;color:#302a24}
+.heading h2 em{color:#8a7050}.heading>p{max-width:310px;font-size:14px;line-height:1.85;color:#625c53;padding-bottom:4px}
+.experience{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(50px,7vw,108px);align-items:center}
+.visual{min-width:0;position:relative;padding:12px 0 0 12px}
+.imageStack{position:relative;perspective:1600px}
+.imageStack::before{content:'';position:absolute;inset:-12px 18px 18px -12px;border:1px solid #cdbba1;border-radius:180px 6px 6px 6px;transform:rotate(-2deg);transition:transform .9s}
+.mainPhoto{position:relative;width:100%;height:clamp(430px,43vw,600px);display:block;overflow:hidden;padding:0;border:0;border-radius:180px 6px 6px 6px;background:#e9e2d7;box-shadow:0 28px 50px -38px #55432a66;isolation:isolate}
+.scene{position:absolute;inset:0;opacity:0;transition:opacity .7s}
+.scene img{object-fit:cover;transform:scale(1.09);transition:transform 1.6s cubic-bezier(.2,.65,.25,1)}
+.activeScene{opacity:1;z-index:1;animation:spaceReveal 1s cubic-bezier(.2,.65,.25,1) both}.activeScene img{transform:scale(1)}
+.photoLabel{position:absolute;bottom:22px;inset-inline:22px auto;z-index:2;display:flex;align-items:center;gap:12px;background:#fffd;backdrop-filter:blur(18px);border:1px solid #fff9;padding:11px 17px;border-radius:28px;font-size:12px;color:#393027}
+.corner{position:absolute;z-index:3;inset:auto -20px 56px auto;width:118px;height:118px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fffc;border:1px solid #ded1bd;backdrop-filter:blur(18px);font:10px var(--mono);letter-spacing:.12em;box-shadow:0 10px 25px #5e493314;transform:rotate(9deg);pointer-events:none;color:#6d5940}
+.corner em{font:italic 26px var(--serif);letter-spacing:-.03em;margin-top:3px;color:#5b4530}
+.visualFoot{display:flex;align-items:center;justify-content:space-between;padding:21px 0 0;font:10px var(--mono);letter-spacing:.05em;color:#7d6b54}
+.choices{min-width:0}.place{border-top:1px solid #e4dbce;scroll-margin-top:115px}.place:last-of-type{border-bottom:1px solid #e4dbce}
+.place h3{font-size:clamp(24px,2.5vw,36px);letter-spacing:-.03em}
+.place h3>button{display:flex;align-items:center;gap:17px;width:100%;min-height:98px;border:0;padding:20px 0;background:transparent;color:#6d6257;text-align:start;transition:color .3s}
+.place h3>button>span:nth-child(2){flex:1;line-height:1.18}.place h3>button>svg{flex-shrink:0}
+.place small{display:block;font:9px var(--mono);text-transform:uppercase;letter-spacing:.11em;color:#89704e;margin-bottom:8px}
+.icon{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;flex-shrink:0;background:#f5efe6;color:#89704e;border:1px solid #e8dece;transition:background .4s}
+.activePlace h3>button{color:#392e22}.activePlace .icon{background:#eae0d0}
+.panel{padding:0 0 26px 61px;animation:unfold .5s both}.panel[hidden]{display:none}
+.panel p{color:#665d51;font-size:13px;line-height:1.85;max-width:400px}
+.galleryLink{border:0;background:none;display:inline-flex;align-items:center;gap:20px;padding:10px 0;margin-top:12px;min-height:44px;font-size:11px;color:#675031}
+.galleryLink svg,.allSpaces svg{transition:transform .3s}.galleryLink:hover svg,.allSpaces:hover svg{transform:translate(3px,-3px)}
+.allSpaces{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:52px;margin-top:25px;font-size:12px;color:#4e3d28;border-bottom:1px solid #cbbda8;width:max-content;max-width:100%}
+.mobilePhoto{display:none}.full{padding-top:10px;border-top:0}
+@keyframes spaceReveal{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0)}}
+@keyframes unfold{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover) and (pointer:fine){.imageStack:hover::before{transform:rotate(0deg)}.mainPhoto:hover .activeScene img{transform:scale(1.035)}}
+@media(max-width:1000px){.inner{width:calc(100% - 64px)}.experience{gap:42px;grid-template-columns:1fr 1fr}.heading{gap:35px}.heading>p{max-width:270px}.mainPhoto{height:520px;border-top-left-radius:130px}.imageStack::before{border-top-left-radius:130px}.corner{width:94px;height:94px;right:-12px;font-size:8px}.corner em{font-size:22px}.place h3{font-size:25px}.place h3>button{gap:12px}.panel{padding-left:0}.panel p{font-size:12px}.icon{width:36px;height:36px}}
+@media(max-width:760px){.spaces{padding:65px 0 72px}.inner{width:calc(100% - 36px)}.heading{display:block;margin-bottom:32px}.heading h2{font-size:48px}.heading>p{max-width:380px;font-size:12px;margin-top:22px;line-height:1.8}.eyebrow{font-size:10px;margin-bottom:16px}.experience{display:block}.visual{display:none}.place h3{font-size:29px}.place h3>button{padding:18px 0;min-height:92px;gap:14px}.place small{font-size:9px}.icon{width:44px;height:44px}.panel{padding:0 0 25px;animation:unfold .45s both}.panel p{margin-top:20px;font-size:12px;line-height:1.85}.mobilePhoto{position:relative;display:block;width:100%;aspect-ratio:1.3;background:#eee7dc;border:0;padding:0;border-radius:65px 5px 5px 5px;overflow:hidden}.mobilePhoto img{object-fit:cover;animation:spaceReveal .8s ease both}.mobilePhoto>span{position:absolute;inset:auto auto 15px 15px;display:flex;align-items:center;gap:10px;padding:9px 13px;border:1px solid #fff;background:#fffdf7ed;backdrop-filter:blur(15px);color:#453524;border-radius:30px;font-size:10px}.galleryLink{display:none}.allSpaces{margin-top:18px;width:100%;font-size:12px}.full{padding-top:0}}
+@media(max-width:380px){.heading h2{font-size:43px}.place h3{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.scene,.scene img,.imageStack::before,.icon,.place h3>button{transition:none}.activeScene,.panel,.mobilePhoto img{animation:none}.mainPhoto:hover .activeScene img{transform:none}}
+.scene,.scene img{transition-duration:var(--motion-duration,700ms);transition-timing-function:var(--motion-ease,ease)}
+.activeScene{animation:none}.panel{animation-duration:var(--motion-duration,700ms);animation-timing-function:var(--motion-ease,ease)}
+@media(prefers-reduced-motion:reduce){.scene,.scene img{transition:none}}
