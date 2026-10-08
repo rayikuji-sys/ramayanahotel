@@ -18,6 +18,7 @@
 **/*.tsbuildinfo
 .sites-runtime
 .codex
+.codex-remote-attachments
 .agents
 references
 test-results

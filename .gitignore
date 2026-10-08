@@ -68,6 +68,7 @@ outputs/
 /.sites-runtime/
 /.agents/
 /.codex/
+/.codex-remote-attachments/
 /outputs/
 /work/
 /data/
