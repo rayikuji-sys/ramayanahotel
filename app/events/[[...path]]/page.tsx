@@ -27,7 +27,7 @@ export default async function Page({params,searchParams}:Props){
  if(path[0]==='bukber'&&path.length===1)redirect('/events/ramadan');
  const data=resolve(path);if(!data)notFound();
  const query=await searchParams,initial:Record<string,string>={};
- for(const key of ['venue','package','campaign','type','guests','layout','date','duration','intent','draft'])if(typeof query[key]==='string')initial[key]=query[key] as string;
+ for(const key of ['venue','package','campaign','type','guests','layout','date','duration','intent','draft','eventName','startTime','company','rooms','checkIn','checkOut'])if(typeof query[key]==='string')initial[key]=query[key] as string;
  for(const [key,kind] of [['venue','venue'],['package','package'],['campaign','campaign']] as const){const match=data.records.find(r=>r.kind===kind&&(r.id===initial[key]||r.slug===initial[key]));if(match)initial[key]=match.id;}
  const origin=process.env.APP_URL||'http://localhost:3001';
  const crumbs=[{name:'Home',url:origin},{name:'Events',url:origin+'/events'},...path.length?[{name:data.title,url:origin+'/events/'+path.join('/')}]:[]];

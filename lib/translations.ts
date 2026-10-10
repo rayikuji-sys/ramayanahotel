@@ -4,6 +4,11 @@ import {mediaCopy} from './media-copy.ts';
 // Columns: English | Indonesian | Chinese | Japanese | Korean | Arabic | German | French | Dutch | Spanish | Russian.
 // Complete phrases only: never translate fragments inside names, prices, URLs or form values.
 const rows=`
+Check availability|Cek ketersediaan|查看空房|空室を確認|예약 가능 여부 확인|تحقق من التوفر|Verfügbarkeit prüfen|Vérifier les disponibilités|Beschikbaarheid bekijken|Ver disponibilidad|Проверить наличие
+For 2 guests|Untuk 2 tamu|供2位宾客|2名様分|투숙객 2명|لضيفين|Für 2 Gäste|Pour 2 personnes|Voor 2 gasten|Para 2 huéspedes|Для 2 гостей
+Starting from|Mulai dari|起价|最低料金|시작 요금|ابتداءً من|Ab|À partir de|Vanaf|Desde|От
+View room details|Lihat detail kamar|查看客房详情|客室の詳細|객실 상세 보기|عرض تفاصيل الغرفة|Zimmerdetails ansehen|Voir les détails de la chambre|Kamerdetails bekijken|Ver detalles de la habitación|Подробнее о номере
+Choose your dates in the booking engine for prices and availability.|Pilih tanggal di booking engine untuk harga dan ketersediaan.|请在预订系统中选择日期查看价格和空房。|予約画面で日程を選び、料金と空室をご確認ください。|예약 화면에서 날짜를 선택해 요금과 예약 가능 여부를 확인하세요.|اختر تواريخك في نظام الحجز للاطلاع على الأسعار والتوفر.|Wählen Sie Ihre Reisedaten im Buchungssystem für Preise und Verfügbarkeit.|Choisissez vos dates dans le moteur de réservation pour les tarifs et disponibilités.|Kies uw datums in het boekingssysteem voor prijzen en beschikbaarheid.|Elija sus fechas en el motor de reservas para ver precios y disponibilidad.|Выберите даты в системе бронирования, чтобы узнать цены и наличие номеров.
 Home|Beranda|首页|ホーム|홈|الرئيسية|Startseite|Accueil|Home|Inicio|Главная
 Rooms|Kamar|客房|客室|객실|الغرف|Zimmer|Chambres|Kamers|Habitaciones|Номера
 Photos & Videos|Foto & Video|照片与视频|写真と動画|사진 및 동영상|الصور والفيديو|Fotos & Videos|Photos et vidéos|Foto’s en video’s|Fotos y vídeos|Фото и видео

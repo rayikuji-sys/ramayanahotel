@@ -39,3 +39,11 @@
 .scene,.scene img{transition-duration:var(--motion-duration,700ms);transition-timing-function:var(--motion-ease,ease)}
 .activeScene{animation:none}.panel{animation-duration:var(--motion-duration,700ms);animation-timing-function:var(--motion-ease,ease)}
 @media(prefers-reduced-motion:reduce){.scene,.scene img{transition:none}}
+@media(max-width:1000px){
+ .experience{display:block}.visual{display:none}
+ .panel{padding:0 0 25px}.panel p{max-width:640px;margin-top:20px;font-size:14px}
+ .mobilePhoto{position:relative;display:block;width:100%;aspect-ratio:3/2;background:#eee7dc;border:0;padding:0;border-radius:12px;overflow:hidden}
+ .mobilePhoto img{object-fit:contain}
+ .mobilePhoto>span{position:absolute;inset:auto auto 15px 15px;display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #fff;background:#fffdf7ed;backdrop-filter:blur(15px);color:#453524;border-radius:30px;font-size:12px}
+ .galleryLink{display:none}.icon{width:44px;height:44px}
+}

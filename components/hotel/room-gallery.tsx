@@ -10,7 +10,7 @@ import {MediaLightbox} from './visual-gallery';
 import {RoomPhotograph} from './room-photograph';
 import styles from './room-gallery.module.css';
 
-export function RoomGallery({room,detail=false}:{room:ContentItem;detail?:boolean}){
+export function RoomGallery({room,detail=false,priority=false}:{room:ContentItem;detail?:boolean;priority?:boolean}){
  const photos=roomGallery(room);
  const [index,setIndex]=useState(0),[open,setOpen]=useState(false);
  const gesture=useRef<{x:number;y:number}|null>(null),swiped=useRef(false);
@@ -44,7 +44,7 @@ export function RoomGallery({room,detail=false}:{room:ContentItem;detail?:boolea
     const dx=event.clientX-start.x,dy=event.clientY-start.y;
     if(photos.length>1&&Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){swiped.current=true;move(dx<0?1:-1);}
    }}>
-    {photos.map((photo,i)=><Image key={photo.id} className={i===index?styles.visible:styles.hidden} src={photo.src} alt={i===index?label(photo.caption):''} aria-hidden={i!==index} fill sizes={detail?'(max-width:760px) 100vw, 90vw':'(max-width:760px) 100vw, 55vw'} loading={detail&&i===0?'eager':'lazy'} draggable={false}/>)}
+    {photos.map((photo,i)=><Image key={photo.id} className={i===index?styles.visible:styles.hidden} src={photo.src} alt={i===index?label(photo.caption):''} aria-hidden={i!==index} fill sizes={detail?'(max-width:760px) 100vw, 90vw':'(max-width:760px) 100vw, 55vw'} loading={(detail||priority)&&i===0?'eager':'lazy'} draggable={false}/>)}
    </button>
    <span className={styles.badge}><Images size={15}/><span>{photos.length} <T>photos</T></span></span>
    <div className={styles.controls}>

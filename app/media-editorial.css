@@ -10,3 +10,15 @@
 .brochure-scroll{height:auto;max-height:min(62vh,780px)}
 .brochure-scroll.is-zoomed{height:min(62vh,780px)}
 @media(max-width:600px){.brochure-scroll{height:auto;max-height:58vh}.brochure-scroll.is-zoomed{height:58vh}}
+.dining-deck,.journey-story{touch-action:pan-y pinch-zoom}
+@media(max-width:1000px){
+ .dining-story-grid{display:flex;flex-direction:column;gap:24px}
+ .dining-deck{width:100%;height:auto;aspect-ratio:3/2}
+ .dining-slide{inset:0;border:0;border-radius:12px;background:#eee7dc;opacity:0;transform:none;pointer-events:none}
+ .dining-slide.is-current{opacity:1;transform:none;pointer-events:auto}
+ .dining-slide img{object-fit:contain;transform:none}
+ .dining-story-copy{width:100%;padding:0}.scene-controls{margin-top:24px}
+ .journey-story{display:block}.journey-photo{height:auto;aspect-ratio:3/2;border-radius:12px;transform:none!important}
+ .journey-photo img{object-fit:contain}.journey-note{margin:16px 0 0}
+ .scene-dots button{width:44px}
+}

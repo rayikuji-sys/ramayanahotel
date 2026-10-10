@@ -1,0 +1,20 @@
+/* Motion is an enhancement: content and controls remain available without JS. */
+.studio-motion-enabled .rf-pills{position:relative;isolation:isolate}
+.studio-motion-enabled .rf-pills.studio-tabs-ready:before{content:"";position:absolute;left:0;top:0;width:var(--tab-width);height:var(--tab-height);transform:translate(var(--tab-x),var(--tab-y));border-radius:11px;background:linear-gradient(120deg,#b38e59,#96703e);box-shadow:0 4px 14px #9a734c2b,inset 0 1px 0 #fff5;pointer-events:none;transition:transform .38s cubic-bezier(.22,1,.36,1),width .38s cubic-bezier(.22,1,.36,1),height .38s cubic-bezier(.22,1,.36,1)}
+.studio-motion-enabled .rf-pills.studio-tabs-ready>button{position:relative;z-index:1;background:transparent;transition:color .2s,border-color .2s}
+.studio-motion-enabled .rf-pills.studio-tabs-ready>button[aria-pressed=true]{background:transparent;border-color:transparent;box-shadow:none;color:#fff}
+.studio-motion-enabled :is(.studio-reserve-card,.rf-room-card,.rf-feature,.rf-event-brief,.stay-room,.summary,.ops-panel){position:relative}
+.studio-motion-enabled [data-studio-light]:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(400px circle at var(--light-x) var(--light-y),#e6bc7430,transparent 65%);box-shadow:inset 0 1px 0 #fff9;z-index:2}
+.studio-motion-enabled .studio-reserve-card,.studio-motion-enabled .rf-room-card{animation:none}
+@media(prefers-reduced-motion:no-preference){
+ .studio-price{display:inline-block;animation:studio-price-in .32s cubic-bezier(.22,1,.36,1)}
+ .studio-motion-enabled :is(.button,button):active{scale:.98}
+ .studio-motion-enabled :is(.button,button) svg{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+ .studio-motion-enabled .studio-meal-plan.is-selected .studio-meal-icon svg{animation:studio-coffee .4s cubic-bezier(.22,1,.36,1)}
+ .studio-motion-enabled .studio-detail-icon:hover svg{transform:scale(1.12)}
+ .studio-motion-enabled .studio-explore:hover svg,.studio-motion-enabled .button:hover>svg:last-child{transform:translateX(3px)}
+ @keyframes studio-price-in{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+ @keyframes studio-coffee{from{transform:rotate(-12deg) scale(.85)}to{transform:rotate(0) scale(1)}}
+}
+@media(prefers-reduced-motion:reduce){.studio-motion-enabled *,.studio-motion-enabled *:before,.studio-motion-enabled *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.studio-motion-enabled [data-studio-light]:after{display:none}}
+html[data-motion=reduce] .studio-motion-enabled [data-studio-light]:after{display:none}

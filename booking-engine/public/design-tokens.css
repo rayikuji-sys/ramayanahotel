@@ -1,0 +1,15 @@
+/* Canonical Ramayana Atelier palette, shared by the website and booking app. */
+:root {
+  --atelier-paper: #f8f5ef;
+  --atelier-surface: #fffdf9;
+  --atelier-glass: rgba(255,253,249,.88);
+  --atelier-ink: #292522;
+  --atelier-muted: #6b6158;
+  --atelier-champagne: #bea47c;
+  --atelier-accent: #806747;
+  --atelier-wash: #eee6da;
+  --atelier-line: #dfd6ca;
+  --atelier-shadow: 0 12px 40px #39291c09, 0 1px 3px #39291c05;
+  --atelier-radius: 18px;
+  --atelier-ease: cubic-bezier(.22,1,.36,1);
+}

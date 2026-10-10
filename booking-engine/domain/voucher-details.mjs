@@ -1,0 +1,4 @@
+export function voucherDetails(r){
+ const methods={qris:'QRIS',va:'Virtual Account',virtual_account:'Virtual Account',card:'Kartu debit / kredit',wallet:'Dompet digital',ewallet:'Dompet digital',transfer:'Transfer bank'};
+ return {adults:r.quote.rooms.reduce((sum,room)=>sum+Number(room.adults||0),0),children:r.quote.rooms.reduce((sum,room)=>sum+(room.children?.length||0),0),method:methods[r.paymentMethod]||'Belum tercatat',booked:r.created?new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Makassar'}).format(new Date(r.created))+' WITA':'Tidak tersedia',balance:Math.max(0,r.total-r.paid),payment:r.status==='cancelled'?'Reservasi dibatalkan. Pengembalian dana mengikuti proses Finance.':r.status==='confirmed'&&r.paid>=r.total?'Pembayaran simulasi lunas.':r.paid>0?'Pembayaran tercatat; periksa sisa tagihan.':'Belum ada pembayaran tercatat.'};
+}

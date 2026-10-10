@@ -1,0 +1,75 @@
+@import '../booking-engine/public/design-tokens.css';
+
+/* Public pages and staff workspace. The homepage film and its header are excluded. */
+:root {
+  --paper:var(--atelier-paper);--paper2:var(--atelier-wash);--ink:var(--atelier-ink);
+  --soft:var(--atelier-muted);--line:var(--atelier-line);--gold:var(--atelier-accent);
+  --color-bg-primary:var(--atelier-paper);--color-bg-secondary:var(--atelier-wash);
+  --color-surface:var(--atelier-surface);--color-ink:var(--atelier-ink);
+  --color-muted:var(--atelier-muted);--color-dark:#292522;--color-dark-deep:#211e1b;
+  --color-dark-soft:#39312b;--color-gold:#bea47c;--color-gold-soft:#d9c4a2;
+  --color-border:var(--atelier-line);--glass-light-strong:var(--atelier-glass);
+  --shadow-card:var(--atelier-shadow);--shadow-soft:0 24px 70px #39291c14;
+}
+body{background:var(--atelier-paper)}
+.site-header:not(.hero-active){background:var(--atelier-glass);border-color:#ffffffd9;box-shadow:var(--atelier-shadow);backdrop-filter:blur(22px)}
+.site-header:not(.hero-active) .reserve-top{background:var(--atelier-ink);color:#fffaf2;border-color:var(--atelier-ink)}
+.hotel-dialog{background:var(--atelier-glass);backdrop-filter:blur(28px);border:1px solid #fff;box-shadow:0 30px 100px #29252233}
+.hotel-dialog:has(.menu-links){width:min(1060px,calc(100% - 32px));max-width:1060px}
+.menu-links{display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.menu-links a{padding:17px 4px;border-bottom:1px solid var(--line);font:500 clamp(21px,2.6vw,32px)/1.25 var(--serif)}
+.menu-links a[aria-current=page]{color:var(--atelier-accent)}
+.menu-links small{font:11px var(--sans);color:var(--soft)}
+.menu-utility-links{padding:20px 0;border-bottom:1px solid var(--line)}
+.menu-event-links{gap:8px 20px}.menu-event-links a{padding:10px 0}
+.page-intro,.rooms-page,.detail-page{background:var(--atelier-paper)}
+.page-intro h1,.ev-heading h2{letter-spacing:-.035em}
+.filter-pills button,.ev-filter button{border-radius:999px;border:1px solid var(--line);background:#fff9;color:var(--ink);min-height:44px;padding:10px 18px}
+.filter-pills button.active,.filter-pills button[aria-pressed=true],.ev-filter button.active,.ev-filter button[aria-pressed=true]{background:var(--ink);color:#fffaf2;border-color:var(--ink)}
+.inquiry-form,.info-card,.contact-card,.places-panel,.selected-place,.ev-finder,.ev-form,.ev-detail-aside,.ev-package-card,.ev-category-grid>a,.lp-panel,.lp-sidebar,.lp-toolbar{border:1px solid var(--line);border-radius:var(--atelier-radius);background:var(--atelier-glass);box-shadow:var(--atelier-shadow)}
+.inquiry-form,.ev-form{padding:clamp(22px,3vw,42px)}
+:is(.inquiry-form,.ev-form,.settings-form,.hotel-dialog,.admin-login) :is(input,select,textarea){border:1px solid var(--line);border-radius:10px;background:#fffdfac9;min-height:48px;box-shadow:inset 0 1px 2px #29252203}
+:is(.inquiry-form,.ev-form,.settings-form,.hotel-dialog,.admin-login) :is(input,select,textarea):focus{outline:2px solid var(--atelier-champagne);outline-offset:2px}
+:is(.inquiry-form,.ev-form,.hotel-dialog) input:is([type=checkbox],[type=radio]){min-height:20px;accent-color:var(--atelier-accent)}
+.ev-page{--ev-gold:var(--atelier-accent);--ev-ink:var(--atelier-ink);--ev-muted:var(--atelier-muted)}
+.ev-subnav{background:var(--atelier-glass);backdrop-filter:blur(20px);border-color:var(--line)}
+.ev-subnav a{min-height:48px;display:inline-flex;align-items:center;white-space:nowrap}
+.ev-hero{background:#292522}.ev-hero-photo{border-radius:24px 0 0 24px}
+.ev-hero-glass{background:#292522c9;border:1px solid #ffffff40;border-radius:16px;backdrop-filter:blur(18px)}
+.ev-category-grid>a,.ev-package-card,.ev-card{overflow:hidden;transition:transform .35s var(--atelier-ease),box-shadow .35s}
+.ev-card{border-radius:18px;border:1px solid var(--line);background:var(--atelier-surface)}
+.ev-price{color:var(--atelier-accent)}.ev-note{border-radius:12px;background:var(--atelier-wash)}
+.ev-final{background:#292522}.ev-service-story,.ev-stay-story{border-radius:24px;overflow:hidden}
+.footer,.footer-main{background:#292522}.footer-main{border-color:#ffffff20}
+.footer .footer-social{border-radius:10px;padding:12px}.footer .footer-social:hover{background:#ffffff12}
+.admin-login{background:radial-gradient(ellipse at 0% 100%,#e8d9c480,transparent 60%),var(--atelier-paper)}
+.login-panel{padding:48px 0;width:min(460px,calc(100% - 48px))}.login-panel h1{font-size:clamp(36px,4vw,54px)}
+.admin-logo{display:block;object-fit:contain;width:150px;height:auto;padding:14px 18px;background:#292522;border-radius:12px}
+.admin-logo{filter:brightness(1.8) saturate(.7)}
+.login-panel>.brand{margin-bottom:42px}.login-panel form{padding:28px;border:1px solid #fff;background:var(--atelier-glass);border-radius:20px;box-shadow:var(--atelier-shadow)}
+.admin-shell{background:var(--atelier-paper);grid-template-columns:248px minmax(0,1fr)}
+.admin-sidebar{background:#292522;color:#fcf5e9;padding:26px 18px;overflow:auto;scrollbar-width:thin}
+.admin-sidebar .brand{justify-content:center}.admin-sidebar .admin-logo{width:172px;background:none}
+.admin-sidebar nav{margin-top:26px;gap:4px}.admin-sidebar nav button{color:#e1d7c8;min-height:46px;border-radius:10px;font-size:12px}
+.admin-sidebar nav button.active{background:#ffffff15;color:#fff4dd;box-shadow:inset 3px 0 #bea47c}
+.admin-sidebar nav button:hover{background:#ffffff0d}.admin-sidebar nav button>span{background:#e9d8bb;color:#473629}
+.admin-sidebar-bottom{padding-top:24px}.admin-sidebar-bottom small{color:#cfc2b1}
+.admin-main{padding:34px clamp(22px,3vw,48px)}.admin-main>header{padding:24px 0;margin-bottom:16px;border-bottom:1px solid var(--line)}
+.admin-main h1{font-size:clamp(30px,3vw,42px)}.admin-main .eyebrow{color:var(--atelier-accent)}
+.admin-stats article,.dashboard-panel,.settings-form,.request-list,.content-list{background:var(--atelier-glass);border:1px solid var(--line);border-radius:16px;box-shadow:var(--atelier-shadow)}
+.admin-stats article{padding:22px}.dashboard-stats article{padding-left:68px}.dashboard-stats article svg{left:18px;background:var(--atelier-wash);color:var(--atelier-accent)}
+.dashboard-stats article strong{font-size:clamp(23px,2.2vw,34px);overflow-wrap:anywhere}
+.admin-avatar{background:#292522}.demo-pill{background:#eee2d0;color:#6d5234}
+.admin-date{background:#ffffffad;border-color:var(--line)}
+.request-list>button,.content-list>button{background:transparent;min-height:72px}
+.request-list>button:hover,.content-list>button:hover{background:#eee6da80}
+.request-status.confirmed,.saved-message,.status-chip{background:#eae1d3;color:#58452e}
+.admin-main table{width:100%;border-collapse:collapse;font-size:12px}.admin-main th{text-align:left;font-size:11px;font-weight:500;color:var(--soft);background:#eee6da80;padding:14px}
+.admin-main td{padding:16px 14px;border-bottom:1px solid var(--line)}.admin-main td p{font-size:11px;color:var(--soft);margin:5px 0}
+.admin-main .table-scroll{overflow:auto;margin-block:22px}.admin-main .follow-panel a{display:flex;margin:14px 0;justify-content:space-between}
+.admin-main .dashboard-panel h2{font-size:27px}.bars i{background:#52463b}.bars b{background:#bea47c}
+.chart-legend span:first-child{color:#52463b}.chart-legend span:last-child{color:#94754f}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.ev-card:hover,.ev-package-card:hover,.ev-category-grid>a:hover{transform:translateY(-4px);box-shadow:0 16px 42px #39291c12}}
+@media(max-width:1000px){.admin-shell{grid-template-columns:210px minmax(0,1fr)}.admin-main{padding:24px}.dashboard-stats article{padding:18px}.dashboard-stats article svg{position:static;margin-bottom:10px}.admin-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.menu-links{gap:0 20px}.menu-links a{font-size:22px;padding-block:16px}.admin-shell{display:block}.admin-sidebar{position:relative;height:auto;padding:16px}.admin-sidebar .brand{justify-content:start}.admin-sidebar .admin-logo{width:128px;padding:0}.admin-sidebar nav{margin-top:18px}.admin-sidebar nav button{flex-shrink:0}.admin-sidebar-bottom{padding-top:0}.admin-main{padding:20px 16px}.admin-main>header{padding-top:16px}.dashboard-panel{padding:20px}.admin-main table{min-width:570px}.ev-hero-photo{border-radius:18px}.login-panel form{padding:22px}.ev-form,.inquiry-form{padding:22px 18px}}
+@media(prefers-reduced-motion:reduce){.ev-card,.ev-package-card,.ev-category-grid>a{transition:none}}

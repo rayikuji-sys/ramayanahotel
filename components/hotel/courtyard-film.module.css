@@ -14,3 +14,13 @@
 @media(prefers-reduced-motion:reduce){.story{height:100svh}.copy{transform:none}.progress{display:none}}
 @media(max-width:760px){.film{background:transparent}.stage::before{content:"";position:absolute;inset:-24px;background:linear-gradient(#29262280,#292622b3),url('/media/courtyard-film.jpg') center/cover;filter:blur(22px);opacity:.7;pointer-events:none}}
 .story.still{height:100svh}
+@media(max-width:1100px),(pointer:coarse){
+ .story,.story.still{height:auto;scroll-margin-top:100px}
+ .stage{position:relative;height:auto;overflow:visible;padding:24px 20px 32px;background:#faf8f4}
+ .stage::before,.shade,.progress{display:none}
+ .film{position:relative;inset:auto;display:block;width:100%;height:auto;max-height:65svh;aspect-ratio:1440/962;object-fit:contain;background:#292622;border-radius:16px}
+ .copy{position:relative;inset:auto;transform:none;padding-top:24px}
+ .copy h2{font-size:clamp(30px,5.5vw,54px);line-height:1.15;max-width:740px;color:#302a24}
+ .copy h2 em,.eyebrow{color:#8a7050}
+ .eyebrow{display:block;margin-bottom:12px}.copy a{margin-top:16px;min-height:44px;color:#302a24;border-color:#b3a591}
+}

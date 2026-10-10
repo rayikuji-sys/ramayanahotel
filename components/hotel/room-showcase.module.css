@@ -51,7 +51,7 @@
 @media(max-width:380px){.headingSide{display:block}.allRooms{max-width:none;margin-top:10px}.heading h2{font-size:43px}.copy h3{font-size:31px}.categoryNav button{font-size:11px}.navigation{gap:12px}.facts{gap:14px}}
 @media(prefers-reduced-motion:reduce){.current,.copy{animation:none}.frame,.frame img,.photograph,.openIcon,.arrows button,.progress i{transition:none}.photograph:hover,.photograph:hover .current img{transform:none}}
 /* Reserve scroll distance only when the complete card fits the viewport. */
-@media(min-width:1100px) and (min-height:780px) and (prefers-reduced-motion:no-preference){
+@media(min-width:1100px) and (min-height:780px) and (pointer:fine) and (prefers-reduced-motion:no-preference){
  .rooms[data-scroll-carousel=true]{min-height:calc(100svh + 1800px);overflow:visible;padding-bottom:80px}
  .rooms[data-scroll-carousel=true] .inner{min-height:inherit}
  .rooms[data-scroll-carousel=true] .collection{position:sticky;top:110px;align-items:center}
@@ -61,3 +61,11 @@
 .frame,.frame img{transition-duration:var(--motion-duration,700ms);transition-timing-function:var(--motion-ease,ease)}
 .current{animation:none}.copy{animation-duration:var(--motion-duration,700ms);animation-timing-function:var(--motion-ease,ease)}
 @media(max-width:760px){.current img{object-fit:cover}.photograph{touch-action:pan-y pinch-zoom}}
+@media(max-width:1000px){
+ .collection{display:flex;flex-direction:column;gap:24px}
+ .photograph{height:auto;aspect-ratio:3/2;border-radius:12px}
+ .frame img,.current img{object-fit:contain;transform:none}
+ .copyPanel{padding-top:0}.description{max-width:none;font-size:14px}
+ .facts{grid-template-columns:1fr 1fr}.facts>div{display:block}.facts dd{margin-top:6px}
+ .allRooms{min-height:44px}
+}
